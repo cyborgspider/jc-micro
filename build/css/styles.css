@@ -1,5 +1,5 @@
 body{-webkit-font-smoothing:antialiased;background:#004e96;color:#fff;font:16px/1.5 "Source Sans Pro","Arial",sans-serif;font-weight:400;position:relative}
-@media (min-width:1600){.container{width:1368px}
+@media only screen and (min-width:1600px){.container{width:1368px}
 }.container-fluid,.container{padding:0}
 h1,h2,h3,h4{font-weight:700;margin:0}
 p{margin-bottom:14px}
