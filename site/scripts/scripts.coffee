@@ -50,6 +50,14 @@ $("textarea").blur ->
     if $(@).val() == ''
       $(@).val('Type your message here...')
 
+$('#subject').focus ->
+  if $(@).val() == 'Question about FATCA/FBAR'
+    $(@).val('')
+
+$("#subject").blur ->
+    if $(@).val() == ''
+      $(@).val('Question about FATCA/FBAR')
+
 $('#contact-form').submit (e)->
   e.preventDefault()
   if $(this).parsley().validate()
@@ -75,11 +83,14 @@ contactButtonLoader = ()->
 
 #Check scroll positioning, move the navigation bar if not at the top
 checkTop = ()->
+  $nav = $('nav')
   $win.scroll ->
     if $win.scrollTop() > 0
-      $('nav').removeClass 'top'
+      $nav.removeClass 'top'
     else
-      $('nav').addClass 'top'
+      $nav.addClass 'top'
+      #Remove Intro's active state when you reach the top of the page
+      $nav.find('a[href="#intro"]').closest('li').removeClass 'active'
 
 #Handle navigation
 navHandler = ()->
@@ -234,7 +245,7 @@ startQuiz = ($container) ->
   $slideIndices        = $slideIndexContainer.find('li')
   $slides              = $container.find('.slide')
   $slidesLength        = $slides.length
-  $nextArrow           = $container.find('.slide-next')
+  $nextArrow           = $container.find('.js-slide-next')
   i                    = 0
 
   gotoSlide = ($slideIndex) ->

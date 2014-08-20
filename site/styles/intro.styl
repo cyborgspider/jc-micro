@@ -15,6 +15,38 @@
     font-size     22px
     margin-bottom 18px
 
+.intro-arrow-wrap
+  width      62px
+  height     62px
+  position   relative
+  margin     12px auto 0
+  cursor     pointer
+
+.intro-arrow-box
+  background-color #00386d
+  position   absolute
+  width      100%
+  height     100%
+  transition transform 0.2s ease-in-out, background-color 0.2s ease-in-out
+
+  .intro-arrow-wrap:hover &
+    transform        rotate(45deg)
+    background-color #002344
+
+.intro-arrow
+  transform    rotate(45deg)
+  border-top   1px solid #0056a6
+  border-right 1px solid #0056a6
+  width        30px
+  height       30px
+  position     absolute
+  top          16px
+  left         8px
+  transition   border-color 0.2s ease-in-out
+
+  .intro-arrow-wrap:hover &
+    border-color #fff
+
 .divide
   background url(../img/divide.png) no-repeat center top
   width      752px
@@ -47,6 +79,6 @@
   height     100%
   top        0
   left       0
-  right      0 
+  right      0
   bottom     0
   z-index    3

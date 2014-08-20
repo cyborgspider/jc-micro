@@ -45,6 +45,18 @@
     }
   });
 
+  $('#subject').focus(function() {
+    if ($(this).val() === 'Question about FATCA/FBAR') {
+      return $(this).val('');
+    }
+  });
+
+  $("#subject").blur(function() {
+    if ($(this).val() === '') {
+      return $(this).val('Question about FATCA/FBAR');
+    }
+  });
+
   $('#contact-form').submit(function(e) {
     e.preventDefault();
     if ($(this).parsley().validate()) {
@@ -75,11 +87,14 @@
   };
 
   checkTop = function() {
+    var $nav;
+    $nav = $('nav');
     return $win.scroll(function() {
       if ($win.scrollTop() > 0) {
-        return $('nav').removeClass('top');
+        return $nav.removeClass('top');
       } else {
-        return $('nav').addClass('top');
+        $nav.addClass('top');
+        return $nav.find('a[href="#intro"]').closest('li').removeClass('active');
       }
     });
   };
@@ -233,7 +248,7 @@
     $slideIndices = $slideIndexContainer.find('li');
     $slides = $container.find('.slide');
     $slidesLength = $slides.length;
-    $nextArrow = $container.find('.slide-next');
+    $nextArrow = $container.find('.js-slide-next');
     i = 0;
     gotoSlide = function($slideIndex) {
       var $this;
