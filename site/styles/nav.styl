@@ -32,9 +32,17 @@ nav
   &.top
     top 30px
 
+  .mobile &
+    top      0
+    position relative
+
 #main-nav
   float  right
-  margin 28px 0 0 
+  margin 28px 0 0
+
+  @media only screen and (max-width:768px)
+    float       left
+    margin-left 16px
 
   & > .nav
     margin  0
@@ -43,6 +51,10 @@ nav
     & > li
       display      inline-block
       margin-right 40px
+
+      @media only screen and (max-width:1000px)
+        font-size    14px
+        margin-right 10px
 
       &:last-child
         margin-right 0
@@ -58,5 +70,5 @@ nav
           color       #fff
       &.active
         & > a
-          font-weight 700          
+          font-weight 700
 

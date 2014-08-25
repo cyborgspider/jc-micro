@@ -2,12 +2,18 @@
 html
   head
     title JC &amp; Company
-    script(src="js/detectmobilebrowser.js")
+    script.
+        var device;
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+          device = "mobile";
+        } else {
+          device = "desktop";
+        }
     link(href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700", rel="stylesheet")
     link(href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css", rel="stylesheet")
     link(href="css/bootstrap.min.css", rel="stylesheet")
     link(href="css/styles.css", rel="stylesheet")
-    //-meta(name="viewport", content="initial-scale=1")
+    //- meta(name="viewport", content="initial-scale=1")
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -33,4 +39,4 @@ html
     script(src="http://cdnjs.cloudflare.com/ajax/libs/velocity/0.7.0/velocity.ui.min.js")
     script(src="http://parsleyjs.org/dist/parsley.min.js")
     script(src="js/bootstrap.min.js")
-    script(src="js/scripts.min.js")
+    script(src="js/scripts.js")

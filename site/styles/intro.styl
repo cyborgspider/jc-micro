@@ -4,6 +4,9 @@
   position   relative
   overflow   hidden
 
+  .mobile &
+    height 640px
+
   h1
     font-size     45px
     margin-bottom 10px
@@ -43,7 +46,7 @@
   top          16px
   left         8px
   transition   border-color 0.2s ease-in-out
-  animation    pulse 1s
+  animation    pulse 2s ease-in-out infinite
 
   .intro-arrow-wrap:hover &
     border-color #fff
